@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; ">
+    <div style="height: 100vh; display: flex;align-items: center;justify-content: center;">
+        <h1 id="output" style="font-size: 100px;color: white; text-align: center;"> </h1>
+
+    </div>
+</body>
+<script>
+    getTimes=()=>{
+        // create an object
+        const localtime= new Date()
+        console.log(localtime);
+
+        let hours=localtime.getHours()
+        let minutes=localtime.getMinutes()
+        let seconds=localtime.getSeconds()
+        let session='AM'
+
+        if(hours>12){
+            hours=hours-12
+            session='PM'
+        }
+        output.innerHTML=(`${hours} : ${minutes} : ${seconds}     ${session}`)
+
+        setTimeout(()=>{
+            getTimes()
+        },1000)
+        
+    }
+    getTimes()
+</script>
+</html>
